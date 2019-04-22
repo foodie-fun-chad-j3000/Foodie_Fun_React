@@ -1,16 +1,16 @@
 import React, { Component } from 'react'
 
-import Place from './Place';
+import Meal from './Meal';
 
-export class MyPlaces extends Component {
+export class MyMeals extends Component {
   render() {
     return (
       <div>
         <h1>My Restaurants</h1>
-        <Place />
+        <Meal />
       </div>
     )
   }
 }
 
-export default MyPlaces;
+export default MyMeals;

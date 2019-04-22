@@ -1,4 +1,7 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+
+import { login } from '../actions';
 
 class Login extends Component {
   state = {
@@ -48,4 +51,10 @@ class Login extends Component {
   }
 }
 
-export default Login;
+const mapStateToProps = state => {
+  return {
+    error: state.error
+  }
+}
+
+export default connect(mapStateToProps, { login })(Login);

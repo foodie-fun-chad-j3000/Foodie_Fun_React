@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 
 import register from '../actions';
 
+
 class Register extends Component {
   state = {
     credentials: {
@@ -29,6 +30,7 @@ class Register extends Component {
     })
   }
 
+
   render() {
     return (
       <div>
@@ -39,6 +41,7 @@ class Register extends Component {
             name='username'
             value={this.state.credentials.username}
             placeholder='Enter a username'
+
             onChange={this.handleChange}
           />
           <input
@@ -46,6 +49,7 @@ class Register extends Component {
             name='password'
             value={this.state.credentials.password}
             placeholder='Enter a password'
+
             onChange={this.handleChange}
           />
           <button>Click to sign up</button>
@@ -63,6 +67,7 @@ const mapStateToProps = state => {
 }
 
 export default connect(mapStateToProps, { register: register })(Register);
+
 
 
 

@@ -2,6 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 
+
 const Header = () => {
   return (
     <div className='header'>
@@ -14,6 +15,7 @@ const Header = () => {
         <NavLink to='/register'>Sign Up</NavLink>
         <NavLink to='/login'>Login</NavLink>
       </div>
+
 
     </div>
   )

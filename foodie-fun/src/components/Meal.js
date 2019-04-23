@@ -18,10 +18,10 @@ const Meal = ({ meal }) => {
       </div>
 
 
+
     </div>
   )
 }
 
 export default Meal;
 
-// commented here

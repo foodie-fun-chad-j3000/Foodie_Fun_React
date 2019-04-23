@@ -3,6 +3,7 @@ import {
   ERROR,
   LOGIN_SUCCESS,
   REGISTER_SUCCESS,
+
   FETCH_MEALS_SUCCESS
 } from '../actions';
 
@@ -11,6 +12,7 @@ const initialState = {
   meals: [],
   loading: false,
   addingUser: false
+
 }
 
 export const reducer = (state = initialState, action) => {
@@ -29,6 +31,7 @@ export const reducer = (state = initialState, action) => {
     case REGISTER_SUCCESS:
       localStorage.setItem('token', action.data.payload)
       return { ...state, error: '', loading: false, addingUser: true }
+
 
     case FETCH_MEALS_SUCCESS:
       return { ...state, error: '', meals: action.payload, loading: false }

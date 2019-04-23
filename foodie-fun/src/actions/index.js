@@ -8,6 +8,7 @@ export const FETCH_MEALS_SUCCESS = 'FETCH_MEALS_SUCCESS';
 
 export const login = credentials => dispatch => {
   dispatch({ type: LOADING });
+
   return axios
     .post('https://backend-foodie-fun.herokuapp.com/api/auth/login', credentials)
     .then(res => dispatch({
@@ -30,11 +31,13 @@ export const register = newUser => dispatch => {
     }))
     .catch(err => dispatch({
       type: ERROR,
+
       payload: err
     }))
 }
 
 export const getMeals = () => dispatch => {
+
   dispatch({ type: LOADING });
   return axios
     .get('https://backend-foodie-fun.herokuapp.com/api/meals/')

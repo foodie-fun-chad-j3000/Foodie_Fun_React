@@ -19,6 +19,7 @@ export class MyMeals extends Component {
           <Meal meal={meal} key={meal.id} />
         )}
 
+
       </div>
     )
   }
@@ -33,3 +34,4 @@ const mapStateToProps = state => {
 }
 
 export default connect(mapStateToProps, { getMeals })(MyMeals);
+

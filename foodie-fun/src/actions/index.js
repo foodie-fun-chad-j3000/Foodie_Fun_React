@@ -5,7 +5,8 @@ export const ERROR = 'ERROR';
 export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
 export const REGISTER_SUCCESS = 'REGISTER_SUCCESS';
 export const FETCH_MEALS_SUCCESS = 'FETCH_MEALS_SUCCESS';
-export const ADD_MEALS_SUCCESS = 'ADD_MEALS_SUCCESS';
+export const ADD_MEAL_SUCCESS = 'ADD_MEAL_SUCCESS';
+export const DELETE_MEAL_SUCCESS = 'DELETE_MEAL_SUCCESS';
 
 export const login = credentials => dispatch => {
   dispatch({ type: LOADING });
@@ -61,7 +62,21 @@ export const addMeal = newMeal => dispatch => {
   return axios
     .post('https://backend-foodie-fun.herokuapp.com/api/meals', newMeal)
     .then(res => dispatch({
-      type: ADD_MEALS_SUCCESS,
+      type: ADD_MEAL_SUCCESS,
+      payload: res.data
+    }))
+    .catch(err => dispatch({
+      type: ERROR,
+      payload: err
+    }))
+}
+
+export const deleteMeal = id => dispatch => {
+  dispatch({ type: LOADING });
+  return axios
+    .delete(`https://backend-foodie-fun.herokuapp.com/api/meals/${id}`)
+    .then(res => dispatch({
+      type: DELETE_MEAL_SUCCESS,
       payload: res.data
     }))
     .catch(err => dispatch({

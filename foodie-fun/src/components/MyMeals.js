@@ -14,14 +14,18 @@ export class MyMeals extends Component {
   render() {
     console.log('meals: ', this.props.meals)
     return (
-      <div>
-        {this.props.loading ? <h2>Loading...</h2> : null}
-        <h1>My Meals</h1>
-        <NavLink to='/add-meal'>Add a meal</NavLink>
-        {this.props.meals.map(meal =>
-          <Meal meal={meal} key={meal.id} />
-        )}
+      <div className='wrapper'>
+        <div className='meals-list'>
+          {this.props.loading ? <h2>Loading...</h2> : null}
 
+          <h1>My Meals</h1>
+
+          <NavLink to='/add-meal'>Add a meal</NavLink>
+
+          {this.props.meals.map(meal =>
+            <Meal meal={meal} key={meal.id} />
+          )}
+        </div>
 
       </div>
     )

@@ -10,11 +10,11 @@ export class AddMeal extends Component {
       restaurant_name: '',
       restaurant_type: '',
       item_name: '',
-      item_photo: '',
-      food_rating: '',
-      item_comment: '',
-      wait_time: '',
-      date_visited: ''
+      // item_photo: '',
+      // food_rating: '',
+      // item_comment: '',
+      // wait_time: '',
+      // date_visited: ''
     }
   }
 
@@ -32,18 +32,18 @@ export class AddMeal extends Component {
       restaurant_name: '',
       restaurant_type: '',
       item_name: '',
-      item_photo: '',
-      food_rating: '',
-      item_comment: '',
-      wait_time: '',
-      date_visited: ''
+      // item_photo: '',
+      // food_rating: '',
+      // item_comment: '',
+      // wait_time: '',
+      // date_visited: ''
     })
   }
 
   render() {
     return (
       <div className='wrapper'>
-        <div className='add-meal'>
+        <div className='form-wrap'>
           <form className='input-form' onSubmit={this.addMeal}>
             <input
               type='text'
@@ -66,42 +66,8 @@ export class AddMeal extends Component {
               placeholder='Menu item'
               onChange={this.handleChange}
             />
-            <input
-              type='text'
-              name='item_photo'
-              value={this.state.item_photo}
-              placeholder='Photo URL'
-              onChange={this.handleChange}
-            />
-            <input
-              type='text'
-              name='food_rating'
-              value={this.state.food_rating}
-              placeholder='Rate your meal'
-              onChange={this.handleChange}
-            />
-            <input
-              type='text'
-              name='item_comment'
-              value={this.state.item_comment}
-              placeholder='Comment'
-              onChange={this.handleChange}
-            />
-            <input
-              type='text'
-              name='wait_time'
-              value={this.state.wait_time}
-              placeholder='Wait time'
-              onChange={this.handleChange}
-            />
-            <input
-              type='text'
-              name='date_visited'
-              value={this.state.date_visited}
-              placeholder='Date visited'
-              onChange={this.handleChange}
-            />
             <button>Add a meal</button>
+
           </form>
 
         </div>
@@ -117,3 +83,41 @@ const mapStateToProps = state => {
 }
 
 export default connect(mapStateToProps, { addMeal: addMeal })(AddMeal)
+
+
+
+// <input 
+//               type='text'
+//               name='item_photo'
+//               value={this.state.item_photo}
+//               placeholder='Photo URL'
+//               onChange={this.handleChange}
+//             />
+//             <input
+//               type='text'
+//               name='food_rating'
+//               value={this.state.food_rating}
+//               placeholder='Rate your meal'
+//               onChange={this.handleChange}
+//             />
+//             <input
+//               type='text'
+//               name='item_comment'
+//               value={this.state.item_comment}
+//               placeholder='Comment'
+//               onChange={this.handleChange}
+//             />
+//             <input
+//               type='text'
+//               name='wait_time'
+//               value={this.state.wait_time}
+//               placeholder='Wait time'
+//               onChange={this.handleChange}
+//             />
+//             <input
+//               type='text'
+//               name='date_visited'
+//               value={this.state.date_visited}
+//               placeholder='Date visited'
+//               onChange={this.handleChange}
+//             />

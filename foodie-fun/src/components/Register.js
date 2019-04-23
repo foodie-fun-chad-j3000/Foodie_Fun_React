@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
 
-import register from '../actions';
+import { register } from '../actions';
 
 
 class Register extends Component {
@@ -30,31 +30,31 @@ class Register extends Component {
     })
   }
 
-
   render() {
     return (
-      <div>
+      <div className='wrapper'>
+        <div className='login'>
+          <h2>Sign up here</h2>
+          <form className='input-form' onSubmit={this.register}>
+            <input
+              type='text'
+              name='username'
+              value={this.state.credentials.username}
+              placeholder='Enter a username'
 
-        <form onSubmit={this.register}>
-          <input
-            type='text'
-            name='username'
-            value={this.state.credentials.username}
-            placeholder='Enter a username'
+              onChange={this.handleChange}
+            />
+            <input
+              type='password'
+              name='password'
+              value={this.state.credentials.password}
+              placeholder='Enter a password'
 
-            onChange={this.handleChange}
-          />
-          <input
-            type='password'
-            name='password'
-            value={this.state.credentials.password}
-            placeholder='Enter a password'
-
-            onChange={this.handleChange}
-          />
-          <button>Click to sign up</button>
-        </form>
-
+              onChange={this.handleChange}
+            />
+            <button>Click to sign up</button>
+          </form>
+        </div>
       </div>
     )
   }

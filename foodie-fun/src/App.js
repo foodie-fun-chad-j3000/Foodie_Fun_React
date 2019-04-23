@@ -15,7 +15,6 @@ class App extends Component {
         <div>
           <Header />
         </div>
-        <h1>Foodie Fun</h1>
 
         <PrivateRoute path='/protected' component={MyMeals} />
         <Route path='/register' component={Register} />

@@ -3,14 +3,16 @@ import {
   ERROR,
   LOGIN_SUCCESS,
   REGISTER_SUCCESS,
-  FETCH_MEALS_SUCCESS
+  FETCH_MEALS_SUCCESS,
+  ADD_MEALS_SUCCESS
 } from '../actions';
 
 const initialState = {
   error: '',
   meals: [],
   loading: false,
-  addingUser: false
+  addingUser: false,
+  addingMeal: false
 }
 
 export const reducer = (state = initialState, action) => {
@@ -33,6 +35,9 @@ export const reducer = (state = initialState, action) => {
 
     case FETCH_MEALS_SUCCESS:
       return { ...state, error: '', meals: action.payload, loading: false }
+
+    case ADD_MEALS_SUCCESS:
+      return { ...state, error: '', meal: action.payload, loading: false, addingMeal: true }
 
     default:
       return state

@@ -3,6 +3,8 @@
   font-family: 'Roboto Condensed', sans-serif;
 }
 
+/* Header styles */
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -27,6 +29,12 @@
   font-size: 1.2rem;
 }
 
+/* welcome styles */
+
+
+
+/* Login styles */
+
 .login {
   width: 95%;
   margin: 0 5% 0 0;
@@ -42,11 +50,12 @@
   font-size: 1.8rem;
 }
 
+/* Form styles */
+
 .input-form {
 display: flex;
 flex-direction: column;
 align-items: center;
-
 }
 
 .input-form input {

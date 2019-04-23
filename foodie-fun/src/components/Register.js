@@ -22,7 +22,8 @@ class Register extends Component {
 
   register = e => {
     e.preventDefault();
-    this.props.register(this.state)
+    this.props.register(this.state.credentials)
+      .then(() => this.props.history.push('./login'))
     this.setState({
       username: '',
       password: ''

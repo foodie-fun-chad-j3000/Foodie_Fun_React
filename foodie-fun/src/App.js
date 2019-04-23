@@ -6,6 +6,7 @@ import PrivateRoute from './components/PrivateRoute';
 import MyMeals from './components/MyMeals';
 import Register from './components/Register';
 import Login from './components/Login';
+import AddMeal from './components/AddMeal';
 import './App.css';
 
 class App extends Component {
@@ -20,6 +21,7 @@ class App extends Component {
 
         <Route path='/register' component={Register} />
         <Route path='/login' component={Login} />
+        <Route path='/add-meal' component={AddMeal} />
       </div>
     );
   }

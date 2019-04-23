@@ -33,7 +33,7 @@ class Register extends Component {
   render() {
     return (
       <div className='wrapper'>
-        <div className='login'>
+        <div className='form-wrap'>
           <h2>Sign up here</h2>
           <form className='input-form' onSubmit={this.register}>
             <input

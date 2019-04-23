@@ -28,24 +28,28 @@ class Login extends Component {
 
   render() {
     return (
-      <div>
-        <form onSubmit={this.login}>
-          <input
-            type='text'
-            name='username'
-            value={this.state.credentials.username}
-            placeholder='Username'
-            onChange={this.handleChange}
-          />
-          <input
-            type='password'
-            name='password'
-            value={this.state.credentials.password}
-            placeholder='Password'
-            onChange={this.handleChange}
-          />
-          <button>Log in</button>
-        </form>
+      <div className='wrapper'>
+        <div className='login'>
+          <h2>Login Please</h2>
+          <form className='input-form' onSubmit={this.login}>
+            <input
+              type='text'
+              name='username'
+              value={this.state.credentials.username}
+              placeholder='Username'
+              onChange={this.handleChange}
+            />
+            <input
+              type='password'
+              name='password'
+              value={this.state.credentials.password}
+              placeholder='Password'
+              onChange={this.handleChange}
+            />
+            <button>Log in</button>
+          </form>
+        </div>
+
       </div>
     )
   }

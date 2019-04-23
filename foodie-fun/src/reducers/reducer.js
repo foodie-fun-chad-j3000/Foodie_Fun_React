@@ -25,13 +25,12 @@ export const reducer = (state = initialState, action) => {
       return { ...state, error: action.payload, loading: false }
 
     case LOGIN_SUCCESS:
-      localStorage.setItem('token', action.payload.payload)
+      localStorage.setItem('token', action.payload)
       return { ...state, error: '', loading: false }
 
     case REGISTER_SUCCESS:
       localStorage.setItem('token', action.data.payload)
       return { ...state, error: '', loading: false, addingUser: true }
-
 
     case FETCH_MEALS_SUCCESS:
       return { ...state, error: '', meals: action.payload, loading: false }

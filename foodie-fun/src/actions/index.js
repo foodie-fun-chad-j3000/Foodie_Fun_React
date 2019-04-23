@@ -37,7 +37,6 @@ export const register = newUser => dispatch => {
 }
 
 export const getMeals = () => dispatch => {
-
   dispatch({ type: LOADING });
   return axios
     .get('https://backend-foodie-fun.herokuapp.com/api/meals/')

@@ -23,3 +23,5 @@ const Meal = ({ meal }) => {
 }
 
 export default Meal;
+
+// commented here

@@ -1,13 +1,22 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+
 
 
 const Header = () => {
   return (
     <div className='header'>
-      <Link to='/protected'>My Meals</Link>
-      <Link to='/register'>Sign Up</Link>
-      <Link to='/login'>Login</Link>
+      <div className='logo'>
+        <h3>Foodie Fun</h3>
+      </div>
+
+      <div className='links'>
+        <NavLink to='/protected'>My Meals</NavLink>
+        <NavLink to='/register'>Sign Up</NavLink>
+        <NavLink to='/login'>Login</NavLink>
+      </div>
+
+
     </div>
   )
 }

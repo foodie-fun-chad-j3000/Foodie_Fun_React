@@ -1,16 +1,37 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux';
 
+import { getMeals } from '../actions';
 import Meal from './Meal';
 
 export class MyMeals extends Component {
+
+  componentDidMount() {
+    this.props.getMeals()
+  }
+
   render() {
     return (
       <div>
-        <h1>My Restaurants</h1>
-        <Meal />
+        {this.props.loading ? <h2>Loading...</h2> : null}
+        <h1>My Meals</h1>
+        {this.props.meals.map(meal =>
+          <Meal meal={meal} key={meal.id} />
+        )}
+
+
       </div>
     )
   }
 }
 
-export default MyMeals;
+const mapStateToProps = state => {
+  return {
+    meals: state.meals,
+    error: state.error,
+    loading: state.loading
+  }
+}
+
+export default connect(mapStateToProps, { getMeals })(MyMeals);
+

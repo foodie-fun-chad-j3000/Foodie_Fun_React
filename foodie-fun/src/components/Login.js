@@ -14,7 +14,7 @@ class Login extends Component {
   login = e => {
     e.preventDefault();
     this.props.login(this.state.credentials)
-      .then(() => this.props.history.push('./my-meals'))
+      .then(() => this.props.history.push('./protected'))
   }
 
   handleChange = e => {
@@ -55,10 +55,8 @@ class Login extends Component {
   }
 }
 
-const mapStateToProps = state => {
-  return {
-    error: state.error
-  }
-}
+const mapStateToProps = ({ error }) => ({
+  error
+})
 
 export default connect(mapStateToProps, { login })(Login);

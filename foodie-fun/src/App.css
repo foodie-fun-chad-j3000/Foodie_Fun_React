@@ -18,6 +18,10 @@
   color: #00619e;
 }
 
+ /* .search-form input {
+  color: gray;
+} */
+
 .links {
   margin-right: 30px;
 }
@@ -66,6 +70,7 @@ align-items: center;
   color: white;
   font-size: 1.2rem;
   border: none;
+  border-radius: 5px
 }
 
 .input-form button {
@@ -75,6 +80,7 @@ align-items: center;
   background: #3fff0a;
   color: #00619e;
   border: none;
+  border-radius: 5px
 }
 
 .input-form button:hover {
@@ -82,12 +88,19 @@ align-items: center;
   color: #3fff0a;
 }
 
-::placeholder {
+.input-form input::placeholder {
 color: white;
 font-size: 1.2rem;
 }
 
 /* Meals list styles */
+
+.meal-section {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
 
 .meals-list a {
   text-decoration: none;
@@ -102,4 +115,22 @@ font-size: 1.2rem;
 
 .meals-list a:hover {
   font-size: 2.2rem;
+}
+
+/* Meal styles */
+
+.meal {
+  width: 30%;
+  background:whitesmoke;
+  border-radius: 10px;
+  box-shadow: 3px 3px 10px;
+}
+
+.meal button {
+  margin-bottom: 20px;
+  background: #3fff0a;
+  color: #00619e;
+  padding: 4px 8px;
+  border: 1px solid #00619e;
+  border-radius: 5px;
 }

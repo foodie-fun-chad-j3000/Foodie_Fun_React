@@ -21,10 +21,12 @@ export class MyMeals extends Component {
           <h1>My Meals</h1>
 
           <NavLink to='/add-meal'>Add a meal</NavLink>
+          <div className='meal-section'>
+            {this.props.meals.map(meal =>
+              <Meal meal={meal} key={meal.id} />
+            )}
+          </div>
 
-          {this.props.meals.map(meal =>
-            <Meal meal={meal} key={meal.id} />
-          )}
         </div>
 
       </div>

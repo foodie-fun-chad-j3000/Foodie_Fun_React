@@ -11,11 +11,10 @@ const Meal = ({ meal, deleteMeal }) => {
   return (
     <div className='meal'>
       <div className='title'>
-        <h2>{meal.restaurant_name}</h2>
-        <p>{meal.restaurant_type}</p>
+        <h2>{meal.restaurant_name} - {meal.restaurant_type}</h2>
       </div>
       <div>
-        <h3>{meal.item_name}</h3>
+        <p>{meal.item_name}</p>
         <img src={meal.item_photo} alt='' />
         <p>{meal.food_rating}</p>
         <p>{meal.item_comment}</p>
@@ -31,8 +30,8 @@ const Meal = ({ meal, deleteMeal }) => {
   )
 }
 
-const mapStateToProps = () => {
-
+const mapStateToProps = state => {
+  return {}
 };
 
 export default connect(mapStateToProps, { deleteMeal })(Meal);

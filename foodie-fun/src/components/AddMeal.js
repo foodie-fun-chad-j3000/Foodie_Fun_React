@@ -27,7 +27,7 @@ export class AddMeal extends Component {
   addMeal = e => {
     e.preventDefault();
     this.props.addMeal(this.state)
-      .then(() => this.props.history.push('./my-meals'))
+      .then(() => this.props.history.push('./protected'))
     this.setState({
       restaurant_name: '',
       restaurant_type: '',

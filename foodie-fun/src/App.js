@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 import Header from './components/Header';
 import PrivateRoute from './components/PrivateRoute';
@@ -7,14 +8,33 @@ import MyMeals from './components/MyMeals';
 import Register from './components/Register';
 import Login from './components/Login';
 import AddMeal from './components/AddMeal';
+import Fuse from 'fuse.js';
 import './App.css';
 
 class App extends Component {
+
+  searchHandler = e => {
+    let options = {
+      threshold: 0.8,
+      location: 0,
+      distance: 10,
+      keys: [
+        'restaurant_name',
+        'restaurant_type',
+        'item_name',
+        'item_comment',
+        'date_visited'
+      ]
+    }
+    let fuse = new Fuse(this.props.meals, options);
+    this.setState({ filteredMeals: fuse.search(e.target.value) })
+  }
+
   render() {
     return (
       <div className="App">
         <div>
-          <Header />
+          <Header searchMeals={this.searchHandler} />
         </div>
 
         <PrivateRoute path='/protected' component={MyMeals} />
@@ -27,4 +47,8 @@ class App extends Component {
   }
 }
 
-export default App;
+const mapStateToProps = ({ meals }) => ({
+  meals
+})
+
+export default connect(mapStateToProps, {})(App);

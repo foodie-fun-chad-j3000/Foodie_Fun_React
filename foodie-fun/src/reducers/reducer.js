@@ -21,28 +21,61 @@ export const reducer = (state = initialState, action) => {
   switch (action.type) {
 
     case LOADING:
-      return { ...state, error: '', loading: true }
+      return {
+        ...state,
+        error: '',
+        loading: true,
+      }
 
     case ERROR:
-      return { ...state, error: action.payload, loading: false }
+      return {
+        ...state,
+        error: action.payload,
+        loading: false,
+      }
 
     case LOGIN_SUCCESS:
       localStorage.setItem('token', action.payload.token)
-      console.log(localStorage.token)
-      return { ...state, error: '', loading: false }
+      return {
+        ...state,
+        error: '',
+        loading: false,
+      }
 
     case REGISTER_SUCCESS:
-      localStorage.setItem('token', action.payload)
-      return { ...state, error: '', loading: false, addingUser: true }
+      localStorage.setItem('user_id', action.payload.user_id)
+      return {
+        ...state,
+        error: '',
+        loading: false,
+        addingUser: true,
+      }
 
     case FETCH_MEALS_SUCCESS:
-      return { ...state, error: '', meals: action.payload, loading: false }
+      return {
+        ...state,
+        error: '',
+        meals: action.payload,
+        loading: false,
+      }
 
     case ADD_MEAL_SUCCESS:
-      return { ...state, error: '', meals: action.payload, loading: false, addingMeal: true }
+      return {
+        ...state,
+        error: '',
+        meals: action.payload,
+        loading: false,
+        addingMeal: true,
+      }
 
     case DELETE_MEAL_SUCCESS:
-      return { ...state, error: '', meals: action.payload, loading: false, deletingMeal: true }
+      return {
+        ...state,
+        error: '',
+        meals: action.payload,
+        loading: false,
+        deletingMeal: true,
+      }
 
     default:
       return state

@@ -29,9 +29,7 @@ export const getMeals = () => dispatch => {
   dispatch({ type: LOADING });
   axios
     .get('https://backend-foodie-fun.herokuapp.com/api/meals', {
-      headers: {
-        Authorization: localStorage.getItem('token')
-      }
+      headers: { Authorization: localStorage.getItem('token') }
     })
     .then(res => dispatch({
       type: FETCH_MEALS_SUCCESS,
@@ -62,9 +60,7 @@ export const addMeal = newMeal => dispatch => {
   dispatch({ type: LOADING });
   return axios
     .post('https://backend-foodie-fun.herokuapp.com/api/meals', newMeal, {
-      headers: {
-        Authorization: localStorage.getItem('token')
-      }
+      headers: { Authorization: localStorage.getItem('token') }
     })
     .then(res => dispatch({
       type: ADD_MEAL_SUCCESS,
@@ -80,9 +76,7 @@ export const deleteMeal = id => dispatch => {
   dispatch({ type: LOADING });
   return axios
     .delete(`https://backend-foodie-fun.herokuapp.com/api/meals/${id}`, {
-      headers: {
-        Authorization: localStorage.getItem('token')
-      }
+      headers: { Authorization: localStorage.getItem('token') }
     })
     .then(res => {
       console.log(res.data)
@@ -101,9 +95,7 @@ export const updateMeal = meal => dispatch => {
   console.log('meal:', meal.id)
   dispatch({ type: LOADING });
   return axios.put(`https://backend-foodie-fun.herokuapp.com/api/meals/${meal.id}`, meal, {
-    headers: {
-      Authorization: localStorage.getItem('token')
-    }
+    headers: { Authorization: localStorage.getItem('token') }
   })
     .then(res => dispatch({
       type: UPDATE_MEAL_SUCCESS,

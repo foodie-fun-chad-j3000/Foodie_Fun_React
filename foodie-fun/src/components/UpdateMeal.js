@@ -19,7 +19,6 @@ export class UpdateMeal extends Component {
 
   componentDidMount() {
     const { meals, match } = this.props
-    console.log('cdm', meals)
     const meal = meals.find(meal => meal.id === Number(match.params.id))
     this.setState(meal)
   }

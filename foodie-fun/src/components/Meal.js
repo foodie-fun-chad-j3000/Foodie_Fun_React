@@ -19,8 +19,6 @@ const Meal = (props) => {
     props.history.push('./update-meal')
   }
 
-  console.log(props)
-  console.log('meal', meal)
   return (
 
     <div className='meal'>

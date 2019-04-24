@@ -22,12 +22,17 @@ class Register extends Component {
 
   register = e => {
     e.preventDefault();
-    this.props.register(this.state.credentials)
-      .then(() => this.props.history.push('./login'))
-    this.setState({
-      username: '',
-      password: ''
-    })
+    if (!this.state.credentials.username || !this.state.credentials.password) {
+      alert('Please enter both a username and a password.')
+      return null;
+    } else {
+      this.props.register(this.state.credentials)
+        .then(() => this.props.history.push('./login'))
+      this.setState({
+        username: '',
+        password: ''
+      })
+    }
   }
 
   render() {

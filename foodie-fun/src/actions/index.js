@@ -13,7 +13,6 @@ export const login = credentials => dispatch => {
   return axios
     .post('https://backend-foodie-fun.herokuapp.com/api/auth/login', credentials)
     .then(res => {
-      console.log(res.data)
       dispatch({
         type: LOGIN_SUCCESS,
         payload: res.data
@@ -21,13 +20,13 @@ export const login = credentials => dispatch => {
     })
     .catch(err => dispatch({
       type: ERROR,
-      payload: err
+      payload: err.response
     }))
 }
 
 export const getMeals = () => dispatch => {
   dispatch({ type: LOADING });
-  return axios
+  axios
     .get('https://backend-foodie-fun.herokuapp.com/api/meals', {
       headers: {
         Authorization: localStorage.getItem('token')
@@ -39,7 +38,7 @@ export const getMeals = () => dispatch => {
     }))
     .catch(err => dispatch({
       type: ERROR,
-      payload: err
+      payload: err.response
     }))
 }
 
@@ -53,7 +52,7 @@ export const register = newUser => dispatch => {
     }))
     .catch(err => dispatch({
       type: ERROR,
-      payload: err
+      payload: err.response
     }))
 }
 
@@ -67,7 +66,7 @@ export const addMeal = newMeal => dispatch => {
     }))
     .catch(err => dispatch({
       type: ERROR,
-      payload: err
+      payload: err.response
     }))
 }
 
@@ -81,7 +80,7 @@ export const deleteMeal = id => dispatch => {
     }))
     .catch(err => dispatch({
       type: ERROR,
-      payload: err
+      payload: err.response
     }))
 }
 

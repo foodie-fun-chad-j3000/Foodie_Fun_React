@@ -10,11 +10,6 @@ export class AddMeal extends Component {
       restaurant_name: '',
       restaurant_type: '',
       item_name: '',
-      // item_photo: '',
-      // food_rating: '',
-      // item_comment: '',
-      // wait_time: '',
-      // date_visited: ''
     }
   }
 
@@ -32,11 +27,6 @@ export class AddMeal extends Component {
       restaurant_name: '',
       restaurant_type: '',
       item_name: '',
-      // item_photo: '',
-      // food_rating: '',
-      // item_comment: '',
-      // wait_time: '',
-      // date_visited: ''
     })
   }
 

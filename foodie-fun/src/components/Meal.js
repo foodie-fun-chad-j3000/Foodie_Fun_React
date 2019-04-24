@@ -1,11 +1,14 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { deleteMeal } from '../actions';
+import { withRouter } from 'react-router-dom'
 
-const Meal = ({ meal, deleteMeal }) => {
+const Meal = (props) => {
+  const { meal, deleteMeal } = props;
 
   const clickHandler = () => {
     deleteMeal(meal.id)
+    props.history.push('/protected')
   }
 
   return (
@@ -34,5 +37,5 @@ const mapStateToProps = state => {
   return {}
 };
 
-export default connect(mapStateToProps, { deleteMeal })(Meal);
+export default connect(mapStateToProps, { deleteMeal })(withRouter(Meal));
 

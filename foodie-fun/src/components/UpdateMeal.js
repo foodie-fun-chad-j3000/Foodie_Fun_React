@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { addMeal } from '../actions';
+import { updateMeal } from '../actions';
 
-export class AddMeal extends Component {
+export class UpdateMeal extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -16,15 +16,21 @@ export class AddMeal extends Component {
     }
   }
 
+  componentDidMount() {
+    const { meals, match } = this.props
+    const meal = meals.find(meal => meal.id === Number(match.params.id))
+    this.setState(meal)
+  }
+
   handleChange = e => {
     this.setState({
       [e.target.name]: e.target.value
     })
   }
 
-  addMeal = e => {
+  updateMeal = e => {
     e.preventDefault();
-    this.props.addMeal(this.state)
+    this.props.updateMeal(this.state)
       .then(() => this.props.history.push('./protected'))
     this.setState({
       restaurant_name: '',
@@ -40,7 +46,7 @@ export class AddMeal extends Component {
     return (
       <div className='wrapper'>
         <div className='form-wrap'>
-          <form className='input-form' onSubmit={this.addMeal}>
+          <form className='input-form' onSubmit={this.updateMeal}>
             <input
               type='text'
               name='restaurant_name'
@@ -83,7 +89,7 @@ export class AddMeal extends Component {
               placeholder='Date visited'
               onChange={this.handleChange}
             />
-            <button>Add a meal</button>
+            <button>Click to update</button>
 
           </form>
 
@@ -93,30 +99,9 @@ export class AddMeal extends Component {
   }
 }
 
-const mapStateToProps = state => {
-  return {
-    addingMeal: state.addingMeal
-  }
-}
+const mapStateToProps = ({ meals, updatingMeal }) => ({
+  meals,
+  updatingMeal
+})
 
-export default connect(mapStateToProps, { addMeal: addMeal })(AddMeal)
-
-
-
-
-//             <input
-//               type='text'
-//               name='food_rating'
-//               value={this.state.food_rating}
-//               placeholder='Rate your meal'
-//               onChange={this.handleChange}
-//             />
-//             <
-//             <input
-//               type='text'
-//               name='wait_time'
-//               value={this.state.wait_time}
-//               placeholder='Wait time'
-//               onChange={this.handleChange}
-//             />
-//             
+export default connect(mapStateToProps, { updateMeal: updateMeal })(UpdateMeal)

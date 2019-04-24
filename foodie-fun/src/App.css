@@ -123,10 +123,26 @@ font-size: 1.2rem;
 }
 
 .meal button {
-  margin-bottom: 20px;
+  margin: 20px 0;
   background: #3fff0a;
   color: #00619e;
   padding: 4px 8px;
   border: 1px solid #00619e;
   border-radius: 5px;
+}
+
+.meal img {
+  width: 80%;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.sub-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.meal .sub-title a {
+  font-size: 1rem;
 }

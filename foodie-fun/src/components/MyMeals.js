@@ -13,7 +13,7 @@ export class MyMeals extends Component {
   }
 
   render() {
-    console.log('meals: ', this.props.meals)
+
     return (
       <div className='wrapper'>
         <div className='meals-list'>
@@ -22,6 +22,7 @@ export class MyMeals extends Component {
           <h1>My Meals</h1>
 
           <NavLink to='/add-meal'>Add a meal</NavLink>
+
           <div className='meal-section'>
             {this.props.meals.map(meal =>
               <Meal meal={meal} key={uuidv4()} />

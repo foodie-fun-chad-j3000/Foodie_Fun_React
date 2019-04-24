@@ -8,6 +8,7 @@ import MyMeals from './components/MyMeals';
 import Register from './components/Register';
 import Login from './components/Login';
 import AddMeal from './components/AddMeal';
+import UpdateMeal from './components/UpdateMeal';
 import Fuse from 'fuse.js';
 import './App.css';
 
@@ -45,13 +46,15 @@ class App extends Component {
         <Route path='/register' component={Register} />
         <Route path='/login' component={Login} />
         <Route path='/add-meal' component={AddMeal} />
+        <Route path='/update-meal' component={UpdateMeal} />
       </div>
     );
   }
 }
 
-const mapStateToProps = ({ meals }) => ({
-  meals
+const mapStateToProps = ({ meals, filteredMeals }) => ({
+  meals,
+  filteredMeals
 })
 
 export default connect(mapStateToProps, {})(App);

@@ -59,7 +59,11 @@ export const register = newUser => dispatch => {
 export const addMeal = newMeal => dispatch => {
   dispatch({ type: LOADING });
   return axios
-    .post('https://backend-foodie-fun.herokuapp.com/api/meals', newMeal)
+    .post('https://backend-foodie-fun.herokuapp.com/api/meals', newMeal, {
+      headers: {
+        Authorization: localStorage.getItem('token')
+      }
+    })
     .then(res => dispatch({
       type: ADD_MEAL_SUCCESS,
       payload: res.data
@@ -73,11 +77,18 @@ export const addMeal = newMeal => dispatch => {
 export const deleteMeal = id => dispatch => {
   dispatch({ type: LOADING });
   return axios
-    .delete(`https://backend-foodie-fun.herokuapp.com/api/meals/${id}`)
-    .then(res => dispatch({
-      type: DELETE_MEAL_SUCCESS,
-      payload: res.data
-    }))
+    .delete(`https://backend-foodie-fun.herokuapp.com/api/meals/${id}`, {
+      headers: {
+        Authorization: localStorage.getItem('token')
+      }
+    })
+    .then(res => {
+      console.log(res.data)
+      dispatch({
+        type: DELETE_MEAL_SUCCESS,
+        payload: res.data
+      })
+    })
     .catch(err => dispatch({
       type: ERROR,
       payload: err.response

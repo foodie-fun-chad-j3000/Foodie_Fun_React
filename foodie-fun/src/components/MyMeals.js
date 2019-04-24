@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import { withRouter, NavLink } from 'react-router-dom';
+import uuidv4 from 'uuid'
 
 import { getMeals } from '../actions';
 import Meal from './Meal';
@@ -23,7 +24,7 @@ export class MyMeals extends Component {
           <NavLink to='/add-meal'>Add a meal</NavLink>
           <div className='meal-section'>
             {this.props.meals.map(meal =>
-              <Meal meal={meal} key={meal.id} />
+              <Meal meal={meal} key={uuidv4()} />
             )}
           </div>
 

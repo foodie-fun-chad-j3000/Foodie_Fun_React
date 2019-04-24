@@ -12,6 +12,9 @@ import Fuse from 'fuse.js';
 import './App.css';
 
 class App extends Component {
+  state = {
+    filteredMeals: []
+  }
 
   searchHandler = e => {
     let options = {

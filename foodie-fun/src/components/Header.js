@@ -7,14 +7,6 @@ const Header = props => {
       <div className='logo'>
         <h3>Foodie Fun</h3>
       </div>
-      <form className='search-form'>
-        <input
-          className='search-input'
-          type='text'
-          placeholder='Search'
-          onKeyDown={props.searchMeals}
-        />
-      </form>
 
       <div className='links'>
         <NavLink to='/protected'>My Meals</NavLink>

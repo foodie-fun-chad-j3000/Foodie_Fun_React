@@ -7,17 +7,19 @@ export class UpdateMeal extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      id: localStorage.getItem('mealId'),
       restaurant_name: '',
       restaurant_type: '',
       item_name: '',
       item_photo: '',
-      tem_comment: '',
+      item_comment: '',
       date_visited: ''
     }
   }
 
   componentDidMount() {
     const { meals, match } = this.props
+    console.log('cdm', meals)
     const meal = meals.find(meal => meal.id === Number(match.params.id))
     this.setState(meal)
   }
@@ -33,6 +35,7 @@ export class UpdateMeal extends Component {
     this.props.updateMeal(this.state)
       .then(() => this.props.history.push('./protected'))
     this.setState({
+      id: '',
       restaurant_name: '',
       restaurant_type: '',
       item_name: '',

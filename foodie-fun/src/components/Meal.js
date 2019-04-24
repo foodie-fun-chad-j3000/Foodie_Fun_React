@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { withRouter, NavLink } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 
 import { deleteMeal } from '../actions';
 
@@ -14,8 +14,15 @@ const Meal = (props) => {
     props.history.push('/protected')
   }
 
+  const updateHandler = () => {
+    localStorage.setItem('mealId', `${meal.id}`)
+    props.history.push('./update-meal')
+  }
 
+  console.log(props)
+  console.log('meal', meal)
   return (
+
     <div className='meal'>
       <div className='title'>
         <h2>{meal.restaurant_name}</h2>
@@ -26,7 +33,7 @@ const Meal = (props) => {
         <img src={meal.item_photo} alt='' />
         <p><strong>Comment:</strong> {meal.item_comment}</p>
         <p>{meal.date_visited}</p>
-        <NavLink to='/update-meal'>Update this meal</NavLink>
+        <button onClick={updateHandler}>Update this meal</button>
         <button onClick={clickHandler}>Delete meal</button>
       </div>
 

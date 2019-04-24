@@ -11,7 +11,7 @@ export class AddMeal extends Component {
       restaurant_type: '',
       item_name: '',
       item_photo: '',
-      tem_comment: '',
+      item_comment: '',
       date_visited: ''
     }
   }
@@ -100,23 +100,3 @@ const mapStateToProps = state => {
 }
 
 export default connect(mapStateToProps, { addMeal: addMeal })(AddMeal)
-
-
-
-
-//             <input
-//               type='text'
-//               name='food_rating'
-//               value={this.state.food_rating}
-//               placeholder='Rate your meal'
-//               onChange={this.handleChange}
-//             />
-//             <
-//             <input
-//               type='text'
-//               name='wait_time'
-//               value={this.state.wait_time}
-//               placeholder='Wait time'
-//               onChange={this.handleChange}
-//             />
-//             

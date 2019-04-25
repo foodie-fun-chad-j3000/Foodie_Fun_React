@@ -14,8 +14,8 @@ const Header = () => {
 
       <div className='links'>
         <NavLink to='/protected'>My Meals</NavLink>
-        <NavLink to='/register'>{thing == true ? "Sign Up" : "Welcome"}</NavLink>
-        <NavLink to='/login'>{thing == true ? "Login" : ""}</NavLink>
+        <NavLink to='/register'>Sign Up</NavLink>
+        <NavLink to='/login'>Login</NavLink>
       </div>
 
 

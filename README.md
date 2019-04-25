@@ -3,7 +3,7 @@ A web app that tracks menu items at your favorite restaurant. Never eat the same
 
 
 ### Devleopers
-  [Cameron Macdonald](https://github.com/orgs/foodie-fun-chad-j3000/people/cammac725)
+  [Cameron Macdonald](https://github.com/cammac725)
 
 
 ### Tech Stack

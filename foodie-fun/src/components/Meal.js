@@ -12,7 +12,8 @@ const Meal = (props) => {
 
   const { meal, deleteMeal } = props;
 
-  const clickHandler = () => {
+  const clickHandler = e => {
+    e.preventDefault();
     deleteMeal(meal.id)
     props.history.push('/protected')
   }

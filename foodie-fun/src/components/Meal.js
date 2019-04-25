@@ -8,8 +8,6 @@ import { deleteMeal, getMeals } from '../actions';
 
 const Meal = (props) => {
 
-
-
   const { meal, deleteMeal, getMeals } = props;
 
   const clickHandler = e => {

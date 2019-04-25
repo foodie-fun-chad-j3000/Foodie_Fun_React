@@ -92,7 +92,7 @@ export const deleteMeal = id => dispatch => {
 }
 
 export const updateMeal = meal => dispatch => {
-  console.log('meal:', meal.id)
+  // console.log('meal:', meal.id)
   dispatch({ type: LOADING });
   return axios.put(`https://backend-foodie-fun.herokuapp.com/api/meals/${meal.id}`, meal, {
     headers: { Authorization: localStorage.getItem('token') }

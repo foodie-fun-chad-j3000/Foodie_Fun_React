@@ -8,6 +8,8 @@ import { deleteMeal } from '../actions';
 
 const Meal = (props) => {
 
+
+
   const { meal, deleteMeal } = props;
 
   const clickHandler = () => {
@@ -20,6 +22,8 @@ const Meal = (props) => {
     props.history.push('./update-meal')
   }
 
+  const cdate = moment(meal.date_visited).format('ll')
+
   return (
     <div className='meal'>
       <div className='title'>
@@ -30,7 +34,7 @@ const Meal = (props) => {
         <p>{meal.item_name}</p>
         <img src={meal.item_photo} alt='' />
         <p><strong>Comment:</strong> {meal.item_comment}</p>
-        <p>{meal.date_visited}</p>
+        <p>{cdate}</p>
         <button onClick={updateHandler}>Update the comment</button>
         <button onClick={clickHandler}>Delete meal</button>
       </div>

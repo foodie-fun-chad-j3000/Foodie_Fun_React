@@ -8,8 +8,13 @@ A web app that tracks menu items at your favorite restaurant. Never eat the same
 
 ### Tech Stack
   - React
+      - react-dom
+      - react-redux
+      - react-router-dom
+  - Redux
   - Javascript
   - Vanilla CSS
+  - Bootstrap
   - [Fuse.js](https://fusejs.io/) for fuzzy searching.
 
 

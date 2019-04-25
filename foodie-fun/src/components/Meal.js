@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
+import moment from 'moment';
 
 import { deleteMeal } from '../actions';
 
@@ -20,7 +21,6 @@ const Meal = (props) => {
   }
 
   return (
-
     <div className='meal'>
       <div className='title'>
         <h2>{meal.restaurant_name}</h2>

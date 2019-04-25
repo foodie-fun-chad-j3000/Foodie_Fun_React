@@ -31,7 +31,6 @@ export class MyMeals extends Component {
   }
 
   render() {
-    console.log('meals', this.props.meals)
     return (
       <div className='wrapper'>
         <div className='meals-list'>

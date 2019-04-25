@@ -30,7 +30,7 @@ export class UpdateMeal extends Component {
   }
 
   updateMeal = e => {
-    e.preventDefault();
+    // e.preventDefault();
     this.props.updateMeal(this.state)
       .then(() => this.props.history.push('./protected'))
     this.setState({

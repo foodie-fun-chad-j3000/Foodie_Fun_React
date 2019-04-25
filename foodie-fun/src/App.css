@@ -33,7 +33,7 @@
   font-size: 1.3rem;
 }
 
-/* Login styles */
+/* Login/Logout/Register styles */
 
 .form-wrap, .meals-list {
   width: 95%;
@@ -48,6 +48,31 @@
   margin-top: 30px;
   color: #00619e;
   font-size: 1.8rem;
+}
+
+.logout button {
+  margin-top: 20px;
+  background: #00619e;
+  color: white;
+  padding: 8px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1rem;
+}
+
+.register {
+  margin-top: 40px;
+  color: #00619e;
+  font-size: 1.6rem;
+}
+
+.register button {
+  background: #3fff0a;
+  color: #00619e;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 30px;
+   font-size: 1.1rem;
 }
 
 /* Form styles */
@@ -66,7 +91,7 @@ align-items: center;
   color: white;
   font-size: 1.2rem;
   border: none;
-  border-radius: 5px
+  border-radius: 5px;
 }
 
 .input-form button {

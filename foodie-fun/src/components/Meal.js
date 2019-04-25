@@ -31,7 +31,7 @@ const Meal = (props) => {
         <img src={meal.item_photo} alt='' />
         <p><strong>Comment:</strong> {meal.item_comment}</p>
         <p>{meal.date_visited}</p>
-        <button onClick={updateHandler}>Update this meal</button>
+        <button onClick={updateHandler}>Update the comment</button>
         <button onClick={clickHandler}>Delete meal</button>
       </div>
 

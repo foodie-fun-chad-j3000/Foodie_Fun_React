@@ -65,7 +65,7 @@ class Login extends Component {
           <div className='register'>
             <h3>First time here?</h3>
             <h4>Create your account</h4>
-            <button onClick={this.signUpHandler}>Sign up</button>
+            <button className='signup-btn' onClick={this.signUpHandler}>Sign up</button>
           </div>
 
         </div>

@@ -75,7 +75,8 @@
   border: none;
   border-radius: 5px;
   padding: 8px 30px;
-   font-size: 1.1rem;
+  font-size: 1.1rem;
+  margin-bottom: 500px;
 }
 
 /* Form styles */
@@ -104,7 +105,8 @@ align-items: center;
   background: #3fff0a;
   color: #00619e;
   border: none;
-  border-radius: 5px
+  border-radius: 5px;
+  margin-bottom: 500px;
 }
 
 .input-form button:hover {

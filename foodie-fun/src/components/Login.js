@@ -14,8 +14,17 @@ class Login extends Component {
 
   login = e => {
     e.preventDefault();
-    this.props.login(this.state.credentials)
-      .then(() => this.props.history.push('./protected'))
+    if (!this.state.credentials.username || !this.state.credentials.password) {
+      alert('Please enter a valid username and password.')
+      return null;
+    } else {
+      this.props.login(this.state.credentials)
+        .then(() => this.props.history.push('./protected'))
+      this.setState({
+        username: '',
+        password: ''
+      })
+    }
   }
 
   signUpHandler = () => {

@@ -59,7 +59,7 @@ export class UpdateMeal extends Component {
               onChange={this.handleChange}
             />
 
-            <button>Click to update</button>
+            <button className='signup-btn'>Click to update</button>
 
           </form>
 

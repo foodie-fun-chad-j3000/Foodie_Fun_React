@@ -37,10 +37,7 @@ export class MyMeals extends Component {
     }
     let fuse = new Fuse(this.props.meals, options);
     this.setState({ filteredMeals: fuse.search(e.target.value) })
-
-
   }
-
 
   render() {
     return (

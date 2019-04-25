@@ -76,7 +76,7 @@ export const reducer = (state = initialState, action) => {
       return {
         ...state,
         error: '',
-        meals: [...action.payload],
+        // meals: [...action.payload],
         loading: false,
         deletingMeal: true,
       }

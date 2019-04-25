@@ -55,7 +55,7 @@ class Register extends Component {
               placeholder='Enter a password'
               onChange={this.handleChange}
             />
-            <button>Click to sign up</button>
+            <button className='signup-btn'>Click to sign up</button>
           </form>
         </div>
       </div>

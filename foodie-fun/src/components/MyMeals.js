@@ -8,6 +8,9 @@ import { getMeals } from '../actions';
 import Meal from './Meal';
 
 export class MyMeals extends Component {
+  state = {
+    filteredMeals: []
+  }
 
   componentDidMount() {
     this.props.getMeals()
@@ -34,7 +37,10 @@ export class MyMeals extends Component {
     }
     let fuse = new Fuse(this.props.meals, options);
     this.setState({ filteredMeals: fuse.search(e.target.value) })
+
+
   }
+
 
   render() {
     return (
@@ -56,9 +62,14 @@ export class MyMeals extends Component {
           <NavLink to='/add-meal'>Add a meal</NavLink>
 
           <div className='meal-section'>
-            {this.props.meals.map(meal =>
+
+            {this.state.filteredMeals.length > 0 ? this.state.filteredMeals.map(meal =>
+              <Meal meal={meal} key={uuidv4()} />
+            ) : this.props.meals.map(meal =>
               <Meal meal={meal} key={uuidv4()} />
             )}
+
+
           </div>
 
           <div className='logout'>

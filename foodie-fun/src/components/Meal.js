@@ -19,6 +19,8 @@ const Meal = (props) => {
 
   const updateHandler = () => {
     localStorage.setItem('mealId', `${meal.id}`)
+    localStorage.setItem('itemName', `${meal.item_name}`)
+    localStorage.setItem('comment', `${meal.item_comment}`)
     props.history.push('./update-meal')
   }
 

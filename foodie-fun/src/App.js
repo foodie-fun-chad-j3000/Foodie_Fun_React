@@ -23,6 +23,7 @@ class App extends Component {
 
         <PrivateRoute path='/protected' component={MyMeals} />
 
+        <Route exact path='/' component={Login} />
         <Route path='/register' component={Register} />
         <Route path='/login' component={Login} />
         <Route path='/protected/:id' component={Meal} />

@@ -8,12 +8,7 @@ export class UpdateMeal extends Component {
     super(props);
     this.state = {
       id: localStorage.getItem('mealId'),
-      restaurant_name: '',
-      restaurant_type: '',
-      item_name: '',
-      item_photo: '',
-      item_comment: '',
-      date_visited: ''
+      item_comment: ''
     }
   }
 
@@ -30,17 +25,13 @@ export class UpdateMeal extends Component {
   }
 
   updateMeal = e => {
-    // e.preventDefault();
+    e.preventDefault();
     this.props.updateMeal(this.state)
       .then(() => this.props.history.push('./protected'))
+      .then(() => localStorage.removeItem('mealId'))
     this.setState({
       id: '',
-      restaurant_name: '',
-      restaurant_type: '',
-      item_name: '',
-      item_photo: '',
-      item_comment: '',
-      date_visited: ''
+      item_comment: ''
     })
   }
 
@@ -49,34 +40,7 @@ export class UpdateMeal extends Component {
       <div className='wrapper'>
         <div className='form-wrap'>
           <form className='input-form' onSubmit={this.updateMeal}>
-            <input
-              type='text'
-              name='restaurant_name'
-              value={this.state.restaurant_name}
-              placeholder='Restaurant name'
-              onChange={this.handleChange}
-            />
-            <input
-              type='text'
-              name='restaurant_type'
-              value={this.state.restaurant_type}
-              placeholder='Type of food'
-              onChange={this.handleChange}
-            />
-            <input
-              type='text'
-              name='item_name'
-              value={this.state.item_name}
-              placeholder='Menu item'
-              onChange={this.handleChange}
-            />
-            <input
-              type='text'
-              name='item_photo'
-              value={this.state.item_photo}
-              placeholder='Photo URL'
-              onChange={this.handleChange}
-            />
+
             <input
               type='text'
               name='item_comment'
@@ -84,13 +48,7 @@ export class UpdateMeal extends Component {
               placeholder='Comment'
               onChange={this.handleChange}
             />
-            <input
-              type='text'
-              name='date_visited'
-              value={this.state.date_visited}
-              placeholder='Date visited'
-              onChange={this.handleChange}
-            />
+
             <button>Click to update</button>
 
           </form>

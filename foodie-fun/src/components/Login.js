@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom'
 
 import { login } from '../actions';
 
@@ -15,6 +16,10 @@ class Login extends Component {
     e.preventDefault();
     this.props.login(this.state.credentials)
       .then(() => this.props.history.push('./protected'))
+  }
+
+  signUpHandler = () => {
+    this.props.history.push('/register')
   }
 
   handleChange = e => {
@@ -48,6 +53,12 @@ class Login extends Component {
             />
             <button>Log in</button>
           </form>
+          <div className='register'>
+            <h3>First time here?</h3>
+            <h4>Create your account</h4>
+            <button onClick={this.signUpHandler}>Sign up</button>
+          </div>
+
         </div>
 
       </div>
@@ -59,4 +70,4 @@ const mapStateToProps = ({ error }) => ({
   error
 })
 
-export default connect(mapStateToProps, { login })(Login);
+export default connect(mapStateToProps, { login })(withRouter(Login));

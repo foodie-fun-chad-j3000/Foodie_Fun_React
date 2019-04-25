@@ -13,6 +13,7 @@ const initialState = {
   error: '',
   meals: [],
   loading: false,
+  isLoggedIn: false,
   addingUser: false,
   addingMeal: false,
   deletingMeal: false,
@@ -42,6 +43,7 @@ export const reducer = (state = initialState, action) => {
         ...state,
         error: '',
         loading: false,
+        isLoggedIn: true
       }
 
     case REGISTER_SUCCESS:

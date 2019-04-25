@@ -33,7 +33,7 @@
   font-size: 1.3rem;
 }
 
-/* Login styles */
+/* Login or Logout styles */
 
 .form-wrap, .meals-list {
   width: 95%;
@@ -48,6 +48,16 @@
   margin-top: 30px;
   color: #00619e;
   font-size: 1.8rem;
+}
+
+.logout button {
+  margin-top: 20px;
+  background: #00619e;
+  color: white;
+  padding: 8px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1rem;
 }
 
 /* Form styles */

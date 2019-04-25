@@ -13,6 +13,12 @@ export class MyMeals extends Component {
     this.props.getMeals()
   }
 
+  handleLogout = () => {
+    localStorage.removeItem('token')
+    this.setState({ isLoggedIn: false })
+    this.props.history.push('/login')
+  }
+
   searchHandler = e => {
     let options = {
       threshold: 0.8,
@@ -53,6 +59,10 @@ export class MyMeals extends Component {
             {this.props.meals.map(meal =>
               <Meal meal={meal} key={uuidv4()} />
             )}
+          </div>
+
+          <div className='logout'>
+            <button onClick={this.handleLogout}>Logout</button>
           </div>
 
         </div>

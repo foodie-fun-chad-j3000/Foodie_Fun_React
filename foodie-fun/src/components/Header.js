@@ -1,13 +1,12 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-const thing = localStorage.getItem('token');
-// const thing = null
-console.log("token", localStorage.getItem('token'));
 
 const Header = () => {
   return (
     <div className='header'>
+    
       {console.log(localStorage.getItem('token'))}
+
       <div className='logo'>
         <h3>Foodie Fun</h3>
       </div>
@@ -17,8 +16,6 @@ const Header = () => {
         <NavLink to='/register'>Sign Up</NavLink>
         <NavLink to='/login'>Login</NavLink>
       </div>
-
-
     </div>
   )
 }

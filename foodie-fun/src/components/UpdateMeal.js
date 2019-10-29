@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-
 import { updateMeal } from '../actions';
 
 export class UpdateMeal extends Component {
@@ -58,11 +57,8 @@ export class UpdateMeal extends Component {
               placeholder='Comment'
               onChange={this.handleChange}
             />
-
             <button className='signup-btn'>Click to update</button>
-
           </form>
-
         </div>
       </div>
     )

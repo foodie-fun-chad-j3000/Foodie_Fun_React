@@ -41,7 +41,6 @@ export const getMeals = () => dispatch => {
     }))
 }
 
-
 export const register = newUser => dispatch => {
   dispatch({ type: LOADING });
   return axios
@@ -106,4 +105,3 @@ export const updateMeal = meal => dispatch => {
       payload: err
     }))
 }
-

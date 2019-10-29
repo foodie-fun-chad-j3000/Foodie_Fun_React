@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { withRouter, NavLink } from 'react-router-dom';
 import uuidv4 from 'uuid';
 import Fuse from 'fuse.js';
-
 import { getMeals } from '../actions';
 import Meal from './Meal';
 
@@ -59,22 +58,17 @@ export class MyMeals extends Component {
           <NavLink to='/add-meal'>Add a meal</NavLink>
 
           <div className='meal-section'>
-
             {this.state.filteredMeals.length > 0 ? this.state.filteredMeals.map(meal =>
               <Meal meal={meal} key={uuidv4()} />
             ) : this.props.meals.map(meal =>
               <Meal meal={meal} key={uuidv4()} />
             )}
-
-
           </div>
 
           <div className='logout'>
             <button onClick={this.handleLogout}>Logout</button>
           </div>
-
         </div>
-
       </div>
     )
   }
@@ -87,4 +81,3 @@ const mapStateToProps = ({ meals, loading }) => ({
 
 export default withRouter(
   connect(mapStateToProps, { getMeals })(MyMeals));
-
